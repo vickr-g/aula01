@@ -9,7 +9,7 @@ const reprovado = ' reprovado '
 const nao = 'nao foi possivel calcular'
 function somar() {
     resultado.value = ((Number(numero1.value) + Number(numero2.value)) / 2)
-    if (resultado.value < 5) {
+    if (resultado.value < 7) {
         formulario.classList.add('sombra-vermelha')
         resultado.value = reprovado + ' - ' + ((Number(numero1.value) + Number(numero2.value)) / 2)
     } else {
@@ -17,9 +17,10 @@ function somar() {
         resultado.value = aprovado + ' - ' + ((Number(numero1.value) + Number(numero2.value)) / 2)
 
     }
-    if (Number(numero1.value) < 0 || Number(numero1.value) > 10 || Number(numero2.value) < 0 || Number(numero2.value) > 10)
-        formulario.classList.toggle('sombra-amarelo')
-    resultado.value = nao
+    if (Number(numero1.value) < 0 || Number(numero1.value) > 10 || Number(numero2.value) < 0 || Number(numero2.value) > 10) {
+        formulario.classList.add('sombra-amarelo')
+        resultado.value = nao
+    }
 }
 
 
