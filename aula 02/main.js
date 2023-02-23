@@ -8,18 +8,18 @@ const adicionar = document.getElementById('adicionar')
 
 //     container.innerHTML = container.innerHTML + '<div class="item"></div>'
 // }
-const adicionarCard = (nome, nota) => {
+const adicionarCard = (aluno) => {
     const container = document.getElementById('container')
     const novaDiv = document.createElement('div')
     novaDiv.classList.add('aluno')
-    novaDiv.innerHTML = `<h2 class= "aluno__nome">${nome}</h2>
-                        <span class = "aluno__nota" >${nota}</span>`
+    novaDiv.innerHTML = `<h2 class= "aluno__nome">${aluno.nome}</h2>
+                        <span class = "aluno__nota" >${aluno.nota}</span>`
 
-    if(nome == '' || nota == ''){
+    if(aluno.nome == '' || aluno.nota == ''){
         alert('VAZIO')
-    } else if (nota < 0 || nota > 10 ){
+    } else if (aluno.nota < 0 || aluno.nota > 10 ){
         alert('Nota não existe!')
-    }else if(isNaN(nota)){
+    }else if(isNaN(aluno.nota)){
         alert('Somente numeros sao permitidos')
     }
     
@@ -36,9 +36,11 @@ const adicionarCard = (nome, nota) => {
 
 
 const handleClick = () => {
-    const nome = prompt('digite o nome do aluno')
-    const nota = prompt('digite a nota do aluno')
-    adicionarCard(nome, nota)
+    const aluno ={
+     nome: prompt('digite o nome do aluno'),
+     nota: prompt('digite a nota do aluno')
+    }
+    adicionarCard(aluno)
 
 
 }
